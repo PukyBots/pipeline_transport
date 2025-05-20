@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<sdf version="1.6">
+  <model name="station">
+    <static>true</static>
+    <link name="station_link">
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>2 2 1</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>2 2 1</size>
+          </box>
+        </geometry>
+
+         <material>
+            <ambient>0.1 0.8 0.1 1</ambient>  <!-- Green color -->
+          </material>
+
+      </visual>
+    </link>
+  </model>
+</sdf>
+
+

@@ -1,0 +1,21 @@
+<launch>
+  <!-- Gazebo world -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find pipeline_transport)/worlds/pipeline.world"/>
+    <arg name="paused" value="false"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="gui" value="true"/>
+    <arg name="headless" value="false"/>
+    <arg name="debug" value="false"/>
+  </include>
+  
+  <!-- Capsule controller -->
+  <node name="capsule_controller" pkg="pipeline_transport" type="capsule_controller.py" output="screen"/> 
+  
+  <!-- Speed command node (example) -->
+  <node name="speed_commander" pkg="pipeline_transport" type="speed_commander.py" output="screen"/> 
+
+  <!-- Crossroad controller -->
+  <node name="crossroad_controller" pkg="pipeline_transport" type="crossroad_controller.py" output="screen"/>
+
+</launch>

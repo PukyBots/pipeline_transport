@@ -1,0 +1,122 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <world name="pipeline_world">
+
+    <!-- Ground plane -->
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+
+    <!-- Sun -->
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+
+  <include>
+  <uri>model://station</uri>
+  <name>station_1</name>
+  <pose>-10 0 0 0 0 0</pose>
+</include>
+
+  <include>
+  <uri>model://station</uri>
+  <name>station_2</name>
+  <pose>10 0 0 0 0 0</pose>
+</include>
+
+  <include>
+  <uri>model://station</uri>
+  <name>station_3</name>
+  <pose>0 -10 0 0 0 0</pose>
+</include>
+
+  <include>
+  <uri>model://station</uri>
+  <name>station_4</name>
+  <pose>0 10 0 0 0 0</pose>
+</include>
+
+  <include>
+  <uri>model://station</uri>
+  <name>station_5</name>
+  <pose>0 0 0 0 0 0</pose>
+</include>
+
+
+<!-- Pipe from Station 1 to Center -->
+<include>
+  <uri>model://pipeline</uri>
+  <name>pipe_1_5</name>
+  <pose>-5 0 0.25 0 1.5708 0</pose>
+</include>
+
+<!-- Pipe from Station 2 to Center -->
+<include>
+  <uri>model://pipeline</uri>
+  <name>pipe_2_5</name>
+  <pose>5 0 0.25 0 1.5708 0</pose>
+</include>
+
+<!-- Pipe from Station 3 to Center -->
+<include>
+  <uri>model://pipeline</uri>
+  <name>pipe_3_5</name>
+  <pose>0 -5 0.25 1.5708 0 0</pose>
+</include>
+
+<!-- Pipe from Station 4 to Center -->
+<include>
+  <uri>model://pipeline</uri>
+  <name>pipe_4_5</name>
+  <pose>0 5 0.25 1.5708 0 0</pose>
+</include>
+
+ 
+
+<include>
+  <uri>model://transport_capsule</uri>
+  <pose>-10 0 1 0 0 0</pose> <!-- Initial spawn location -->
+</include>
+
+  <model name="cross_platform">
+  <static>true</static>
+  <pose>0 0 0.75 0 0 0</pose> <!-- Positioned at origin, raised to align with pipeline -->
+  <link name="platform_link">
+    <visual name="visual">
+      <geometry>
+        <box>
+          <size>2.0 2.0 0.6</size> <!-- Square platform -->
+        </box>
+      </geometry>
+      <material>
+        <ambient>0.9 0.9 0.1 1</ambient> <!-- Yellow color -->
+        <diffuse>0.9 0.9 0.1 1</diffuse>
+      </material>
+    </visual>
+    <collision name="collision">
+      <geometry>
+        <box>
+          <size>2.0 2.0 0.6</size>
+        </box>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass>1.0</mass>
+      <inertia>
+        <ixx>1</ixx>
+        <iyy>1</iyy>
+        <izz>1</izz>
+        <ixy>0.0</ixy>
+        <ixz>0.0</ixz>
+        <iyz>0.0</iyz>
+      </inertia>
+    </inertial>
+  </link>
+</model>
+
+
+
+ </world>
+
+</sdf>

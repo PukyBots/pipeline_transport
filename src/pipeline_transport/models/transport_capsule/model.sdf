@@ -1,0 +1,42 @@
+<?xml version="1.6"?>
+<sdf version="1.6">
+  <model name="transport_capsule">
+    <pose>0 0 1 0 0 0</pose> <!-- Initial position (x y z roll pitch yaw) -->
+    <static>false</static>
+
+    <link name="body">
+      <pose>0 0 0 0 0 0</pose>
+
+      <collision name="collision">
+        <geometry>
+          <cylinder>
+            <radius>0.5</radius>
+            <length>1.5</length>
+          </cylinder>
+        </geometry>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <cylinder>
+            <radius>0.5</radius>
+            <length>1.5</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.3 0.6 1.0 1</ambient>
+          <diffuse>0.3 0.6 1.0 1</diffuse>
+        </material>
+      </visual>
+
+      <inertial>
+        <mass>10.0</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <iyy>1</iyy>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+    </link>
+  </model>
+</sdf>
