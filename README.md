@@ -48,5 +48,3 @@ The simulation includes:
 - Controlled transfer paths  
 
 Vehicles move through the pipe structure from one station to another based on defined navigation logic.
-
--
